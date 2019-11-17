@@ -1,0 +1,31 @@
+{
+  "name": "aws-lambda-cfn",
+  "version": "0.1.0",
+  "main": "index.js",
+  "types": "index.d.js",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polovi/aws-lambda-cfn.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "cloudformation",
+    "cfn"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polovi/aws-lambda-cfn/issues"
+  },
+  "homepage": "https://github.com/polovi/aws-lambda-cfn#readme",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.36"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
+}

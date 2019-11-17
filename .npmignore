@@ -1,0 +1,4 @@
+*.md
+**/*.ts
+tsconfig.json
+.prettierrc.json
