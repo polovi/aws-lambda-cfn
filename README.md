@@ -2,21 +2,18 @@
 
 ## Sample Function
 
-```js
+```ts
 import * as cfn from 'aws-lambda-cfn'
 
-const handler = (event: cfn.Event, response: cfn.Response): cfn.Response | Promise<cfn.Response> | never => {
-  const v = event.ResourceProperties['Echo']
+export const handler = async (response: cfn.Response, event: cfn.Event): Promise<void> => {
+  response.PhysicalResourceId = response.LogicalResourceId
 
-  response.data = {
-    Echo: v,
-  }
-
-  return {
-    ...response,
-    PhysicalResourceId: response.LogicalResourceId,
+  response.Data = {
+    CustomValue: event.ResourceProperties.CustomValue,
   }
 }
 
-export const main = cfn.wrapLambda(handler)
+export const main = cfn.wrapHandler(handler)
 ```
+
+- Response is passed as reference so it coul'd be updated but not replaced
